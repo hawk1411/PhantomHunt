@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhantomHunt Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+        h1 { color: #d32f2f; text-align: center; }
+        h2 { color: #1976d2; border-bottom: 2px solid #1976d2; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .vuln { color: red; font-weight: bold; }
+        .safe { color: green; }
+        footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <h1>PhantomHunt - Internal Threat Hunting Report</h1>
+    <p><strong>Generated:</strong> 2026-01-26 16:39:06</p>
+    <p><strong>Local IP / Network:</strong> 10.77.45.198 / 10.77.45.0/24</p>
+
+    <h2>1. Discovered Assets</h2>
+    <table>
+        <tr><th>IP</th><th>MAC</th><th>Hostname</th><th>Status</th></tr>
+        
+        <tr>
+            <td>10.77.45.61</td>
+            <td>c6:8c:b2:1e:90:ca</td>
+            <td>Unknown</td>
+            <td>Alive</td>
+        </tr>
+        
+        <tr>
+            <td>10.77.45.198</td>
+            <td>10:68:38:8d:30:59</td>
+            <td>Ravi</td>
+            <td>Alive</td>
+        </tr>
+        
+    </table>
+
+    <h2>2. Privilege Escalation Findings</h2>
+    <table>
+        <tr><th>Vulnerability</th><th>Status</th><th>Details</th><th>MITRE ATT&CK</th></tr>
+        
+    </table>
+
+    <h2>3. Credential Access Results</h2>
+    <p>Wi-Fi passwords dumped: 0</p>
+    <p>Browser passwords dumped: 0</p>
+
+<!--    <h2>4. Domain / AD Simulation</h2>-->
+<!--    <p>Domain enumeration attempted: False</p>-->
+<!--    <p>Kerberoasting simulated: Yes (real requires domain env)</p>-->
+    <h2>4. Domain Enumeration & AD Attack Simulation</h2>
+<table>
+    <tr><th>Item</th><th>Value</th></tr>
+    
+    <tr><td>Status</td><td>Not attempted</td></tr>
+    
+</table>
+
+    <footer>
+        PhantomHunt v1.0 • Final Year Cybersecurity Project • Ravi • 2026-01-26 16:39:06
+    </footer>
+</body>
+</html>

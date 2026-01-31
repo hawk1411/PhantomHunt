@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhantomHunt Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+        h1 { color: #d32f2f; text-align: center; }
+        h2 { color: #1976d2; border-bottom: 2px solid #1976d2; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .vuln { color: red; font-weight: bold; }
+        .safe { color: green; }
+        footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <h1>PhantomHunt - Internal Threat Hunting Report</h1>
+    <p><strong>Generated:</strong> {{ timestamp }}</p>
+    <p><strong>Local IP / Network:</strong> {{ local_ip }} / {{ network }}</p>
+
+    <h2>1. Discovered Assets</h2>
+    <table>
+        <tr><th>IP</th><th>MAC</th><th>Hostname</th><th>Status</th></tr>
+        {% for ip, data in assets.items() %}
+        <tr>
+            <td>{{ ip }}</td>
+            <td>{{ data.mac or 'N/A' }}</td>
+            <td>{{ data.hostname or 'Unknown' }}</td>
+            <td>Alive</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>2. Privilege Escalation Findings</h2>
+    <table>
+        <tr><th>Vulnerability</th><th>Status</th><th>Details</th><th>MITRE ATT&CK</th></tr>
+        {% for finding in priv_findings %}
+        <tr>
+            <td>{{ finding.name }}</td>
+            <td class="{% if finding.status == 'VULNERABLE' %}vuln{% else %}safe{% endif %}">{{ finding.status }}</td>
+            <td>{{ finding.details }}</td>
+            <td>{{ finding.mitre or 'N/A' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>3. Credential Access Results</h2>
+    <p>Wi-Fi passwords dumped: {{ wifi_count }}</p>
+    <p>Browser passwords dumped: {{ browser_count }}</p>
+
+<!--    <h2>4. Domain / AD Simulation</h2>-->
+<!--    <p>Domain enumeration attempted: {{ domain_attempted }}</p>-->
+<!--    <p>Kerberoasting simulated: Yes (real requires domain env)</p>-->
+    <h2>4. Domain Enumeration & AD Attack Simulation</h2>
+<table>
+    <tr><th>Item</th><th>Value</th></tr>
+    {% if domain_attempted %}
+    <tr><td>Domain Enumeration Attempted</td><td>Yes</td></tr>
+    <tr><td>Kerberoasting Simulation</td><td>Performed (real requires domain environment)</td></tr>
+    <tr><td>Lateral Movement Simulation</td><td>Performed (demo mode - no real execution)</td></tr>
+    {% else %}
+    <tr><td>Status</td><td>Not attempted</td></tr>
+    {% endif %}
+</table>
+
+    <footer>
+        PhantomHunt v1.0 • Final Year Cybersecurity Project • Ravi • {{ timestamp }}
+    </footer>
+</body>
+</html>

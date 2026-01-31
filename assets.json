@@ -1,0 +1,12 @@
+{
+    "10.77.45.61": {
+        "mac": "c6:8c:b2:1e:90:ca",
+        "hostname": "Unknown",
+        "status": "alive"
+    },
+    "10.77.45.198": {
+        "mac": "10:68:38:8d:30:59",
+        "hostname": "Ravi",
+        "status": "alive"
+    }
+}
