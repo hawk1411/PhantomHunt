@@ -33,3 +33,12 @@ A final-year cybersecurity project built in Python that performs silent asset di
    ```bash
    git clone https://github.com/hawk1411/PhantomHunt.git
    cd PhantomHunt
+3. **Create & activate virtual environment**
+
+```bash
+python -m venv venv
+venv\Scripts\activate    # Windows
+# source venv/bin/activate   # Linux/macOS
+
+
+
