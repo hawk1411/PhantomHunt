@@ -35,6 +35,6 @@ A final-year cybersecurity project built in Python that performs silent asset di
    cd PhantomHunt
 3.Create & activate virtual environmentBashpython -m venv venv
 ```
-venv\Scripts\activate    # Windows
-# source venv/bin/activate   # Linux/macOS
+   venv\Scripts\activate    # Windows
+   # source venv/bin/activate   # Linux/macOS
 ```
